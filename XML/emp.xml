@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<employee>
+
+<emp category="developer">
+ <name>Maria Andrew</name>
+    <Designation>CEO</Designation>
+    <Location>Germany</Location>
+</emp>
+
+<emp category="tester">
+  <name>Wallace Peter</name>
+    <Designation>Sofware Engineer</Designation>
+    <Location>Novi</Location>
+</emp>
+
+<emp category="desginer">
+  <name>Gery john</name>
+    <Designation>Support Engineer</Designation>
+    <Location>Bangalore</Location>
+</emp>
+
+<book category="lead">
+  <name>Ralf Kisling</name>
+    <Designation>Director</Designation>
+    <Location>California</Location>
+</emp>
+
+</employee>

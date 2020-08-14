@@ -1,0 +1,9 @@
+<!ELEMENT employees (employee)>
+<!ELEMENT employee (name,Gender,Phone,MailId,Address,workexerience)>
+<!ELEMENT name (#PCDATA) #REQUIRED>
+<!ELEMENT Gender (#PCDATA) #REQUIRED>
+<!ELEMENT Phone (#PCDATA) #REQUIRED>
+<!ELEMENT MailId (#PCDATA) #REQUIRED>
+<!ELEMENT Address (#PCDATA) #REQUIRED>
+<!ELEMENT workexerience (#PCDATA)  #REQUIRED>
+<!ATTLIST employees type CDATA #REQUIRED  #REQUIRED>

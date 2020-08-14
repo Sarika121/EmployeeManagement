@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE employee SYSTEM "employee.dtd">
+<employees type="web">
+  <employee>
+    <name>Sarik Jha</name>
+    <Gender>Female</Gender>
+	<Phone>9686677521</Phone>
+	<MailId>agfhncwds@gmail.com</MailId>
+	<Address>Nelamangala</Address>
+	<workexerience>1</workexerience>
+  </employee>
+  <employee>
+    <name>Anju Jha</name>
+    <Gender>Female</Gender>
+	<Phone>9685477521</Phone>
+	<MailId>dfge87@gmail.com</MailId>
+	<Address>HSR</Address>
+	<workexerience>16</workexerience>
+  </employee>
+</employees>
