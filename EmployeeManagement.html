@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>BlueGray</title>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="images/c5.png" rel="shortcut icon" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="logo">
+                <h1><a href="Index.html"><img style="width: 250px; height: 120px;" src="images/logo1.png" alt="" /></a></h1>
+            </div>
+            
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="EmployeeManagement.html">Employee List</a></li>
+            </ul>
+        </div>
+		
+		<table id="table"></table>
+	
+        <div id="footer">
+            <div id="footer-left"></div>
+            <div id="footer-right"></div>
+            <div id="footer-content">
+                <div id="footer-navigation"> &middot; Design by <a href="https://www.linkedin.com/in/sarika-jha-548522179">Sarika Jha</a><i class="fa fa-linkedin-square" style="font-size:24px; color:blue"></i> </div>
+                <p>Copyright &copy; 2020 Your Site.  All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+		 function readTextFile(file)
+		{
+		    var rawFile = new XMLHttpRequest();
+		    rawFile.open("GET", file, false);
+		    rawFile.onreadystatechange = function ()
+		    {
+		        if(rawFile.readyState === 4)
+		        {
+		            if(rawFile.status === 200 || rawFile.status == 0)
+		            {
+		                var allText = rawFile.responseText;
+						parser = new DOMParser();
+						xmlDoc = parser.parseFromString(allText,"text/xml");
+						var table="<tr><th>name</th><th>Designation</th><th>Location</th></tr>";
+						  var x = xmlDoc.getElementsByTagName("employee");
+						  for (i = 0; i <x.length; i++) { 
+							table += "<tr><td>" +
+							x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+							"</td><td>" +
+							x[i].getElementsByTagName("Designation")[0].childNodes[0].nodeValue +
+							"</td><td>"+
+							x[i].getElementsByTagName("Location")[0].childNodes[0].nodeValue +
+							"</td></tr>";
+						  }
+						  document.getElementById("table").innerHTML = table;
+		            }
+		        }
+		    }
+		    rawFile.send(null);
+		}
+
+		readTextFile("Employee.xml");
+ 	</script>
+</body>
+</html>

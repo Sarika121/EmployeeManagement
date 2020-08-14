@@ -1,0 +1,32 @@
+<Company>
+	<employee>
+		<name>Maria Andrew</name>
+		<Designation>CEO</Designation>
+		<Location>Germany</Location>
+	</employee>
+	<employee>
+		<name>Wallace Peter</name>
+		<Designation>Sofware Engineer</Designation>
+		<Location>Novi</Location>
+	</employee>
+	<employee>
+		<name>Gery john</name>
+		<Designation>Support Engineer</Designation>
+		<Location>Bangalore</Location>
+	</employee>
+	<employee>
+		<name>Ralf Kisling</name>
+		<Designation>Director</Designation>
+		<Location>California</Location>
+	</employee>
+	<employee>
+		<name>Raja Reddy</name>
+		<Designation>Lead Engineer</Designation>
+		<Location>Paris</Location>
+	</employee>
+	<employee>
+		<name>Pradeep Srivastava</name>
+		<Designation>Operator</Designation>
+		<Location>India</Location>
+	</employee>
+</Company>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>BlueGray</title>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="images/c5.png" rel="shortcut icon" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="logo">
+                <h1><a href="Index.html"><img style="width: 250px; height: 120px;" src="images/logo1.png" alt="" /></a></h1>
+            </div>
+            
+        </div>
+</div>
+        <div id="menu">
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+            </ul>
+        </div>
+
+
+<p id="demo"></p>
+
+<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        showResult(xhttp.responseXML);
+    }
+};
+xhttp.open("GET", "XML/emp.xml", false);
+xhttp.send(); 
+
+function showResult(xml) {
+    var txt = "";
+    path = "/employee/emp[1]/name";
+    if (xml.evaluate) {
+        var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        while (result) {
+            txt += result.childNodes[0].nodeValue + "<br>";
+            result = nodes.iterateNext();
+        } 
+    // Code For Internet Explorer
+    } else if (window.ActiveXObject || xhttp.responseType == "msxml-document") {
+        xml.setProperty("SelectionLanguage", "XPath");
+        nodes = xml.selectNodes(path);
+        for (i = 0; i < nodes.length; i++) {
+            txt += nodes[i].childNodes[0].nodeValue + "<br>";
+        }
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+</body>
+ <div id="footer">
+            <div id="footer-left"></div>
+            <div id="footer-right"></div>
+            <div id="footer-content">
+                <div id="footer-navigation"> &middot; Design by <a href="https://www.linkedin.com/in/sarika-jha-548522179">Sarika Jha</a> <i class="fa fa-linkedin-square" style="font-size:24px; color:blue"></i></div>
+                <p>Copyright &copy; 2020 Your Site.  All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Show/Hide Checkboxes example</title>
+<script type="text/javascript">
+function hideSelected() {
+	var oTable = document.getElementById("myTable");
+	var oRows = oTable.getElementsByTagName("tr");
+	
+	for( var i=0; i < oRows.length; i++ ) {
+		var oInputs = oRows[i].getElementsByTagName("input");
+		for( var j=0; j < oInputs.length; j++ ) {
+			if( oInputs[j].name == "showHide" ) {
+				if( oInputs[j].checked ) {
+					oRows[i].style.display = "none";
+				}
+				break;
+			}
+		}					
+	}
+	
+}
+
+function showAll() {
+	var oTable = document.getElementById("myTable");
+	var oRows = oTable.getElementsByTagName("tr");
+
+	for( var i=0; i < oRows.length; i++ ) {
+		if( oRows[i].style.display == "none" ) {
+			oRows[i].style.display = "";
+		}
+	}	
+
+}
+</script>
+</head>
+<body>
+<table id="myTable">
+	<tr><td>Row1</td><td><input type="checkbox" name="showHide" /></td></tr>
+	<tr><td>Row2</td><td><input type="checkbox" name="showHide" /></td></tr>
+	<tr><td>Row3</td><td><input type="checkbox" name="showHide" /></td></tr>
+	<tr><td>Row4</td><td><input type="checkbox" name="showHide" /></td></tr>
+	<tr><td>Row5</td><td><input type="checkbox" name="showHide" /></td></tr>
+</table>
+<input type="button" value="Hide Selected" onclick="hideSelected();" /><input type="button" value="Show All" onclick="showAll();" />
+</body>
+</html>
